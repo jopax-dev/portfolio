@@ -1,95 +1,30 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-export default function Home() {
+export default function Home () {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <>
+      <Image
+        width='360'
+        height='360'
+        src={`https://api.dicebear.com/6.x/adventurer-neutral/svg?size=360&seed=${Math.random()}`}
+        alt='avatar placeholder'
+        className={styles.avatar}
+      />
+      <article className={styles.info}>
+        <h2>
+          Jose Antonio Paz, <i>desarrollador web fullstack</i>.
+        </h2>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+          Apasionado del desarrollo, con algunos años de experiencia a mis espaldas y varias decenas de proyectos en los que he participado.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <p>
+          Soy de esas personas que si puede, prefiere entender el como funciona algo a simplemente seguir girando la rueda. Así, si en el futuro cambia, poder aplicar lo ya aprendido o desarrollar una solución propia.
+        </p>
+        <p>
+          Me gusta analizar los problemas y buscar diferentes soluciones. Eso no quiere decir que me dedique a darle vueltas a lo mismo sin avanzar. Mi experiencia desarrollando MVP's me ha enseñado que es mejor tener un producto funcionando y generando. Ya habrá tiempo mas adelante de buscar nuevas implementaciones cuando toque reorganizar y asentar las cosas.
+        </p>
+      </article>
+    </>
   )
 }

@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+}
+
+.nav { 
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+}
+
+.navitems {
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  overflow: hidden;
+  padding: 1rem;
+  columns: #ccc;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.navitems li a:hover{
+  text-decoration: underline;
+  text-decoration-color: gold;
+}

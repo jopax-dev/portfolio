@@ -1,0 +1,39 @@
+.footer {
+  background-color: #353535;
+  height: 5rem;
+  width: 100%;
+}
+
+.footercontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+.icon {
+  height: 1rem;
+  width: 1rem;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.links:hover .linkedin {
+  fill: #08f;
+  transform: scale(1.2);
+}
+
+.links:hover .github {
+  fill: #fff;
+  transform: scale(1.2);
+}
