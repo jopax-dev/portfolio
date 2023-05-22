@@ -23,7 +23,7 @@ export default function ContactForm () {
     ev.preventDefault()
     setTimeout(() => {
       showModal(true)
-    }, 500)
+    }, 100)
     sendContactForm(state)
     setState(initValues)
     setTimeout(() => {

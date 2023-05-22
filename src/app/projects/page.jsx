@@ -6,7 +6,11 @@ import RepoCard from './RepoCard'
 const url = process.env.API_URL
 
 export default async function Home () {
-  const res = await fetch(`${url}/api/repos`)
+  const res = await fetch(`${url}/api/repos`, {
+    next: {
+      revalidate: 600
+    }
+  })
   const data = await res.json()
   return (
     <section className={styles.projectContainer}>

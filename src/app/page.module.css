@@ -17,36 +17,6 @@
   border: 1px solid #1399ca;
 }
 
-/* .avatar:hover:after {
-  content: "Esto es un placeholder";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 360px;
-  width: 360px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  transform: rotate(-45deg);
-}
-
-.avatar:hover:before {
-  opacity: 70%;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 360px;
-  width: 360px;
-  background-color: #555;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-} */
-
 .content {
   padding: 2rem;
   display: grid;

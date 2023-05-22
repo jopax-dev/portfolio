@@ -8,7 +8,6 @@ export default function Home () {
         <Image
           width='360'
           height='360'
-          // src={`https://api.dicebear.com/6.x/adventurer-neutral/svg?size=360&seed=${Math.random()}`}
           src='/landing2.webp'
           alt='avatar placeholder'
 
