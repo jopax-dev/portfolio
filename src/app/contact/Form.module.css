@@ -7,6 +7,7 @@
 
 .form input, .form textarea {
   padding: 5px;
+  color: #333;
 }
 
 .form textarea {
@@ -17,4 +18,12 @@
 .form input[type=submit] {
   border-radius: 5px;
   padding: 10px 0;
+  transition: all 0.3s ease;
+  width: 50%;
+  align-self: center;
+}
+
+.form input[type=submit]:hover {
+  background-color: #bbb;
+  transform: scale(1.05);
 }

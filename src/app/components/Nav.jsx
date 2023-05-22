@@ -23,7 +23,7 @@ export const Nav = () => {
           </li>
           <li>
             <Link href='/contact'>
-              Contacto
+              Contact
             </Link>
           </li>
         </ul>

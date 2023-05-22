@@ -6,7 +6,7 @@ export const Footer = () => {
       <section className={styles.footercontainer}>
         <div>
           <h4>Jose Antonio Paz</h4>
-          <h6>Fullstack developer</h6>
+          <h5>Fullstack developer</h5>
 
         </div>
         <Link href='https://www.linkedin.com/in/jopax/' target='_blank'>

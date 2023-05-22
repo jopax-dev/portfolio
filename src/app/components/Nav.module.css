@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   top: 0;
+  z-index: 4;
 }
 
 .nav { 
@@ -25,5 +26,5 @@
 
 .navitems li a:hover{
   text-decoration: underline;
-  text-decoration-color: gold;
+  text-decoration-color: #08f;
 }

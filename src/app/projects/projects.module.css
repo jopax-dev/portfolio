@@ -1,0 +1,91 @@
+.projectContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  justify-content: center;
+}
+
+.projectContainer p{
+  margin: 0px;
+}
+
+.repo {
+  width: 340px;
+  height: 340px;
+  border: 1px solid #888;
+  background-color: #054862;
+}
+
+.repo section {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  height: 220px;
+}
+
+.repo section div:first-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info, .tech {
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 220px;
+}
+
+.info div{
+  margin: 0.5rem 0;
+}
+
+.info div:last-child {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.info p {
+  word-break: break-word;
+  max-width: 140px;
+}
+
+.tech{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  max-width: 150px;
+  gap: 1rem;
+}
+
+.lo🇬o{
+  margin: 1rem;
+}
+
+.liveLink {
+  border-bottom:1px solid #08f;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.liveLink:hover {
+  border-bottom: 1px solid #ccc;
+  color: #08f;
+  transform: scale(1.2);
+}
+
+.repoImage {
+  background-color: #fff;
+  text-align: center;
+}
+
+.repocard {
+  transition: all 0.5s;
+}
+
+.repocard:hover {
+  box-shadow: 0px 0px 1rem #000;
+  transform: scale(1.05);
+}
