@@ -31,7 +31,7 @@ export default async function repos (req, res) {
       }
       return filteredRepo
     })
-    res.status(200).send({ data })
+    res.status(200).send(data)
   } catch (error) {
     console.error('Error occurred:', error)
     res.status(500).json({ error: 'Internal Server Error' })

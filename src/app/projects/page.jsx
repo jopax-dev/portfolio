@@ -14,7 +14,7 @@ export default async function Home () {
   const data = await res.json()
   return (
     <section className={styles.projectContainer}>
-      {data.data.map((repo) =>
+      {data.map((repo) =>
         <RepoCard key={repo.name}>
           <article className={styles.repo}>
             <header className={styles.repoImage}>
