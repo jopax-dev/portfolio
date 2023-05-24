@@ -3,7 +3,7 @@ const { Octokit } = require('octokit')
 const apiKey = process.env.GITHUB_KEY
 const githubUser = process.env.GITHUB_USER
 
-export default async function repos (req, res) {
+export default async function getData () {
   const getRepos = async () => {
     const octokit = new Octokit({
       auth: apiKey
@@ -31,9 +31,8 @@ export default async function repos (req, res) {
       }
       return filteredRepo
     })
-    res.status(200).send(data)
+    return data
   } catch (error) {
     console.error('Error occurred:', error)
-    res.status(500).json({ error: 'Internal Server Error' })
   }
 }

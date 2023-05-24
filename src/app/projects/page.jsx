@@ -2,16 +2,10 @@ import Link from 'next/link'
 import styles from './projects.module.css'
 import Image from 'next/image'
 import RepoCard from './RepoCard'
-
-const url = process.env.API_URL
+import getData from '../services/github'
 
 export default async function Home () {
-  const res = await fetch(`${url}/api/repos`, {
-    next: {
-      revalidate: 600
-    }
-  })
-  const data = await res.json()
+  const data = await getData()
   return (
     <section className={styles.projectContainer}>
       {data.map((repo) =>
@@ -51,6 +45,5 @@ export default async function Home () {
         </RepoCard>
       )}
     </section>
-
   )
 }
