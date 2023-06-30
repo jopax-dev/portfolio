@@ -1,27 +1,23 @@
 .projectContainer {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  flex-wrap: wrap;
-  padding: 0 2rem;
-  justify-content: center;
-}
-
-.projectContainer p{
-  margin: 0px;
 }
 
 .repo {
-  width: 340px;
-  height: 340px;
-  border: 1px solid #888;
-  background-color: #054862;
+  padding: 0 !important;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 4px 2px rgba(125,125,125,.2);
+
 }
 
 .repo section {
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  height: 220px;
+  flex-grow: 1;
 }
 
 .repo section div:first-child{
@@ -33,11 +29,11 @@
 .info, .tech {
   flex-grow: 1;
   flex-basis: 0;
-  height: 220px;
+  z-index: 1;
 }
 
-.info div{
-  margin: 0.5rem 0;
+.info{
+  position: relative;
 }
 
 .info div:last-child {
@@ -48,44 +44,85 @@
 
 .info p {
   word-break: break-word;
-  max-width: 140px;
 }
 
 .tech{
   display: flex;
   align-items: center;
   justify-content: center;
-  align-content: center;
   flex-wrap: wrap;
-  max-width: 150px;
   gap: 1rem;
 }
 
-.lo🇬o{
+.logo{
   margin: 1rem;
 }
 
-.liveLink {
-  border-bottom:1px solid #08f;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+.liveLink, .url {
+  border-bottom:2px solid rgb(106, 93, 160);
 }
 
-.liveLink:hover {
-  border-bottom: 1px solid #ccc;
-  color: #08f;
+.liveLink:hover, .url:hover {
+  border-bottom: 1px solid #ddd;
+  color: rgb(106, 93, 160);
   transform: scale(1.2);
 }
 
-.repoImage {
-  background-color: #fff;
-  text-align: center;
+.headername {
+  background-color: rgba(150,150,150,0.04);
+  padding: 0.5rem 1rem;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .repocard {
   transition: all 0.5s;
+  position: relative;
 }
 
 .repocard:hover {
-  box-shadow: 0px 0px 1rem #000;
+  box-shadow: 0px 0px 1rem rgba(50, 50, 50, 0.5);
   transform: scale(1.05);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: true;
+}
+
+.repocard::before,
+.repocard::after{
+  --angle: 0deg;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0.1rem solid;
+  opacity: 0;
+  border-image: conic-gradient(from var(--angle), transparent, rgba(130,225,255, 1) 0.1turn, rgba(130,225,255, 1) 0.01turn, transparent 0.01turn) 1;
+	animation: borderRotate linear infinite;
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+}
+
+.repocard::after{
+  animation-delay: var(--delayAfter);
+  animation-duration: var(--durationAfter);
+}
+
+@keyframes borderRotate {
+  0% {
+    --angle: 0deg;
+    opacity: 0.9;
+  }
+  45%, 55%{
+    opacity: 0;
+  }
+  100% {
+		--angle: 360deg;
+    opacity: 0.9;
+	}
 }

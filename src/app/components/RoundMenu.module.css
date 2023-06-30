@@ -1,0 +1,119 @@
+.roundmenuwrapper{
+  display: flex;
+  gap: 2rem;
+}
+.menu {
+  position: relative;
+  list-style: none;
+  z-index: 1;
+}
+
+.menu_button {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 50%;
+  background: #424242;
+  text-decoration: none;
+}
+
+.menu_button img {
+  border-radius: 50%;
+}
+
+.menu_button::before,
+.menu_button::after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  border: 1px solid rgba(57, 50, 86, 1);
+  background:linear-gradient(20deg, rgba(57, 50, 86, 1) 0%, rgb(5, 2, 26) 100% );
+  animation: menueffect 5s ease-in infinite;
+}
+.menu_button::before{
+  height: calc(200px*1.2);
+  width: calc(200px*1.2);
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+}
+
+ .menu_button::after{
+  opacity: 0;
+  height: calc(200px*1.4);
+  width: calc(200px*1.4);
+  animation-delay: .5s;
+  background:linear-gradient(20deg, rgba(57, 50, 86, 1) 0%, rgb(5, 2, 26) 100%);
+  z-index: -2;
+  top: -20%;
+  left: -20%;
+} 
+
+@keyframes menueffect {
+  0%{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  40%, 60%{
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(1);
+  }  
+}
+
+.menu_button:hover {
+  animation-play-state: paused;
+}
+
+.menu_item {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(0px, 0px);
+  transition-property: transform, background-color;
+  transition-duration: .3s;
+}
+
+.menu_item:not(:hover) {
+  transition-delay: 1s, 2s;
+}
+
+.menu:hover>.menu_item:nth-child(2) {
+  transform: rotate(40deg) translateY(190px);
+  transition-delay: .1s;
+}
+
+.menu:hover>.menu_item:nth-child(3) {
+  transform: rotate(-40deg) translateY(190px);
+  transition-delay: .2s;
+}
+
+.icon {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  fill: rgb(235, 235, 235);
+  box-shadow: 0px 0px 6px 5px rgb(100, 90, 150);
+  border-radius: 50%;
+}
+
+.linkedin{
+  transform: rotate(40deg);
+}
+
+.github{
+  transform: rotate(-40deg);
+}

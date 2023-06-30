@@ -8,22 +8,17 @@ export const Nav = () => {
         <ul className={styles.navitems}>
           <li>
             <Link href='/'>
-              Home
+              HOME
             </Link>
           </li>
           <li>
             <Link href='/projects'>
-              Projects
+              PROJECTS
             </Link>
           </li>
           <li>
-            <Link href='/about'>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href='/contact'>
-              Contact
+            <Link href='/CV.pdf' target='_blank'>
+              CV
             </Link>
           </li>
         </ul>

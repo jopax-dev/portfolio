@@ -1,48 +1,31 @@
-import Link from 'next/link'
 import styles from './projects.module.css'
-import Image from 'next/image'
 import RepoCard from './RepoCard'
-import getData from '../services/github'
-
+import { getRepoData } from '../../../lib/getRepoData'
+export const revalidate = 30
 export default async function Home () {
-  const data = await getData()
+  const data = await getRepoData()
+
+  const publicRepos = data.filter(repo => repo.visibility === 'public')
+
+  const wipRepos = data.filter(repo => repo.visibility !== 'public' && (repo.topics.includes('testing') || repo.topics.includes('wip')))
+
+  const privateRepos = data.filter(repo => repo.visibility !== 'public' && repo.topics.includes('nda') && !repo.topics.includes('wip'))
+
   return (
     <section className={styles.projectContainer}>
-      {data.map((repo) =>
-        <RepoCard key={repo.name}>
-          <article className={styles.repo}>
-            <header className={styles.repoImage}>
-              <Image
-                width='240'
-                height='120'
-                src={`/${repo.name}.webp`}
-                alt='repo image'
-              />
-            </header>
-            <section>
-              <div className={styles.info}>
-                <p>{repo.description}</p>
-                <p><Link href={repo.url}>Accede al repo</Link></p>
-                {repo.homepage && <p><Link className={styles.liveLink} href={repo.homepage}>Live</Link> {repo.stars > 0 && <span> ⭐ {repo.stars}</span>} </p>}
-              </div>
-              <div className={styles.tech}>
-                {repo.topics.map((topic) => {
-                  const src = topic.includes('github') ? 'github' : topic
-                  return (
-                    <Image
-                      key={topic}
-                      width='50'
-                      height='50'
-                      src={`/${src}-logo.svg`}
-                      alt={`${src} logo`}
-                      className={styles.logo}
-                    />
-                  )
-                })}
-              </div>
-            </section>
-          </article>
-        </RepoCard>
+      <h1>Proyectos públicos</h1>
+      {publicRepos.map((repo) =>
+        <RepoCard key={repo.name} repo={repo} />
+      )}
+
+      <h1>Privados - Trabajando en ello</h1>
+      {wipRepos.map((repo) =>
+        <RepoCard key={repo.name} repo={repo} />
+      )}
+
+      <h1>Privados con NDA</h1>
+      {privateRepos.map((repo) =>
+        <RepoCard key={repo.name} repo={repo} />
       )}
     </section>
   )

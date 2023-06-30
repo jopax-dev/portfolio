@@ -1,38 +1,17 @@
 const { Octokit } = require('octokit')
 
 const apiKey = process.env.GITHUB_KEY
-const githubUser = process.env.GITHUB_USER
 
-export default async function getData () {
-  const getRepos = async () => {
-    const octokit = new Octokit({
-      auth: apiKey
-    })
+export const getRepos = async () => {
+  const octokit = new Octokit({
+    auth: apiKey
+  })
 
-    const repos = await octokit.request('GET /users/{username}/repos', {
-      username: githubUser,
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-    })
+  const repos = await octokit.request('GET /user/repos', {
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+  })
 
-    return repos
-  }
-  try {
-    const repoList = await getRepos()
-    const data = repoList.data.map((repo) => {
-      const filteredRepo = {
-        url: repo.html_url,
-        homepage: repo.homepage,
-        name: repo.name,
-        description: repo.description,
-        stars: repo.stargazers_count,
-        topics: repo.topics
-      }
-      return filteredRepo
-    })
-    return data
-  } catch (error) {
-    console.error('Error occurred:', error)
-  }
+  return repos
 }

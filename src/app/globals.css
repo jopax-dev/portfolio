@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   color: #ddd;
+  font-size: clamp(16px, 1.5vw, 2vw)
 }
 
 html,
@@ -20,69 +21,36 @@ body {
 }
 
 body {
-  background: -moz-linear-gradient(45deg, #0a3e51 0%,#155268 25%,#052834 100%);
-  background: -webkit-linear-gradient(45deg, #0a3e51 0%,#155268 25%,#052834 100%);
-  background: linear-gradient(45deg, #0a3e51 0%,#155268 25%,#052834 100%);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
+  background:linear-gradient(20deg, rgba(57, 50, 86, 1) 0%, rgb(5, 2, 26) 15%);
   overflow: hidden;
   position: relative; 
 }
 
-body::before, 
-body::after {
+body::before{
   content: "";
-  width: 70vmax;
-  height: 70vmax;
+  width: 16rem;
+  height: 16rem;
   position: absolute;
-  background: rgba(100, 150, 200, 0.2);
-  left: -20vmin;
-  top: -20vmin;
-  animation: morph 15s linear infinite alternate, spin 20s linear infinite;
-  z-index: 1;
-  will-change: border-radius, transform;
-  transform-origin: 55% 55%;
-  pointer-events: none; 
+  background: rgba(57, 50, 86, 1);
+  box-shadow: -2rem 2rem 10rem 15rem rgb(57, 50, 86);
+  right: -8rem;
+  top: -8rem;
+  border-radius: 50%;
+  pointer-events: none;
+  animation:  beat 5s ease-in-out infinite; 
 }
 
-body::after {
-  width: 70vmin;
-  height: 70vmin;
-  left: auto;
-  right: -10vmin;
-  top: auto;
-  bottom: 0;
-  animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
-  transform-origin: 20% 20%; 
-}
+@keyframes beat {
+  0% {
+    box-shadow: -2rem 2rem 10rem 15rem rgb(57, 50, 86);
+  }
+  50% {
+  box-shadow: -2rem 2rem 8rem 10rem rgb(57, 50, 86);
+  }
+  100%{
+  box-shadow: -2rem 2rem 10rem 15rem rgb(57, 50, 86);
 
-@-webkit-keyframes Gradient {
-  0% {  background-position: 0 50%}
-  50% {  background-position: 100% 50%}
-  100% {  background-position: 0 50%}
-}
-
-@-moz-keyframes Gradient {
-  0% {  background-position: 0 50%}
-  50% {  background-position: 100% 50%}
-  100% {  background-position: 0 50%}
-}
-
-@keyframes Gradient {
-  0% {  background-position: 0 50%}
-  50% {  background-position: 100% 50%}
-  100% {  background-position: 0 50%}
-}
-
-@keyframes morph {
-0% {  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
-100% {  border-radius: 40% 60%; } 
-}
-
-@keyframes spin {
-to {  transform: rotate(1turn); } 
+  }
 }
 
 ::-webkit-scrollbar {
@@ -91,7 +59,13 @@ to {  transform: rotate(1turn); }
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #43837a;
+  background:linear-gradient(
+    20deg, 
+    rgb(57, 50, 86) 15%, 
+    rgb(5, 2, 26) 45%, 
+    rgb(5, 2, 26) 55%,   
+    rgb(57, 50, 86) 85%);
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -105,6 +79,6 @@ a {
 }
 
 p {
-  margin: 1rem 0;
+  margin: 1em 0;
   text-shadow: 1px 1px 1px #333;
 }

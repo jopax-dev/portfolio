@@ -5,8 +5,9 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <section className={styles.footercontainer}>
         <div>
-          <h4>Jose Antonio Paz</h4>
-          <h5>Fullstack developer</h5>
+          <p>Jose Antonio Paz
+            <br /><i>Fullstack developer</i>
+          </p>
 
         </div>
         <Link href='https://www.linkedin.com/in/jopax/' target='_blank'>

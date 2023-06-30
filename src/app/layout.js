@@ -1,5 +1,5 @@
 import './globals.css'
-import styles from './page.module.css'
+import styles from './maincontent.module.css'
 import { Nav } from './components/Nav'
 import { Footer } from './components/Footer'
 import { Montserrat } from 'next/font/google'

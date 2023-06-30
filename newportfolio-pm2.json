@@ -1,0 +1,10 @@
+{
+  "apps": [
+{
+  "name": "newportfolio",
+  "script": "npm",
+  "args": "run start -- -p 3069",
+  "watch": true
+}
+]
+}

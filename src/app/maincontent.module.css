@@ -1,0 +1,15 @@
+
+.main {
+  align-items: center;
+  padding: 10rem 0 2rem;
+  flex-grow: 1;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0px, 1fr) minmax(360px, 3fr) minmax(0px, 1fr);
+}
+
+.content {
+  max-width: 1600px;
+  grid-column: 2;
+}
+  
